@@ -100,7 +100,7 @@ function computeWindowedRenderLimits(
   // too.
   const visibleBegin = Math.max(0, offset);
   const visibleEnd = visibleBegin + visibleLength;
-  const overscanLength = (windowSize - 1) * visibleLength;
+  const overscanLength = (windowSize - 1) * getFrameMetricsApprox(0).length * 3;
 
   // Considering velocity seems to introduce more churn than it's worth.
   const leadFactor = 0.5; // Math.max(0, Math.min(1, velocity / 25 + 0.5));
